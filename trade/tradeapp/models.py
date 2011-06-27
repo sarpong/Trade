@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib import admin
 
 class Advert(models.Model):
-	Item=models.CharField(max_length=100)
+	product=models.CharField(max_length=100)
 	name=models.CharField(max_length=60)
 	price=models.FloatField()
 	phone=models.CharField(max_length=100)

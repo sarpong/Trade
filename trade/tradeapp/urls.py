@@ -1,17 +1,15 @@
 from django.conf.urls.defaults import *
-from django.views.generic import list_detail
-from trade.tradeapp.models import *
-
-advertise = {
-	"queryset": Advert.objects.all(),
-}
-
-request = {
-	"queryset": Request.objects.all(),
-}
 
 urlpatterns = patterns('',
-	url(r'^trade/$', list_detail.object_list, advertise),
-	url(r'^trade2/$', list_detail.object_list, request),
+	url(r'^$','tradeapp.views.home')
+	url(r'^adlist/$', 'tradeapp.views.advert_list'),
+	url(r'^reqlist/$', 'tradeapp.views.request_list'),
+	url(r'^search/(.*)$','tradeapp.views.search')
+#	url(r'^addetail/(?P<id>\d+)/((?P<showAdvert>.*)/)?$','tradeapp.views.advert_detail')
+#	url(r'^reqdetail/(?P<id>\d+)/((?P<showRequest>.*)/)?$','tradeapp.views.request_detail')
+#	url(r'^logout/$','tradeapp.views.logoutView')
+#	url(r'^login$','tradeapp.views.loginView')
+#	url(r'^editreq$','tradeapp.views.editreq')
+#	url(r'^editadvert$','tradeapp.views.editad')
 )
 
