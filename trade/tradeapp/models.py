@@ -10,7 +10,7 @@ class Advert(models.Model):
 	created=models.DateTimeField(auto_now_add=True)
 	updated=models.DateTimeField(auto_now=True)
 	def __unicode__(self):
-	    return self.Item+ " , "+self.price+" ," +str(self.Updated)
+	    return self.Item+ " , "+self.price+" ," +str(self.updated)
 
 class Request(models.Model):
 	product=models.CharField(max_length=100)
@@ -19,7 +19,7 @@ class Request(models.Model):
 	phone=models.CharField(max_length=100)
 	email=models.EmailField()
 	def __unicode__(self):
-	    return self.product+" , "+str(self.Updated)
+	    return self.product+" , "+str(self.updated)
 
 class AdvertAdmin(admin.ModelAdmin):
        list_display=('Item','name','price','phone','email','created')
