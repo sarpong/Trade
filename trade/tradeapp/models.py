@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 # Create your models here.
 
@@ -34,4 +35,4 @@ class RequestAdmin(admin.modelAdmin):
 
 admin.site.register(Advert,AdvertAdmin)
 admin.site.register(Request, RequestAdmin)
-	
+
