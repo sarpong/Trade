@@ -1,7 +1,7 @@
 # Create your views here.
 from django.template import Context, loader
 from django.http import HttpResponse, HttpResponseRedirect
-from models import Advert, Request
+from tradeapp.models import Advert, Request
 from django.forms import ModelForm
 from django.views.decorators.csrf import csrf_exempt
 from django import forms
