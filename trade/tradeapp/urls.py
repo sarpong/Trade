@@ -12,6 +12,6 @@ request = {
 
 urlpatterns = patterns('',
 	url(r'^trade/$', list_detail.object_list, advertise),
-	url(r'^trade/$', list_detail.object_list, request),
+	url(r'^trade2/$', list_detail.object_list, request),
 )
 

@@ -1,8 +1,6 @@
-import os
-PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
- 
-
 # Django settings for trade project.
+import os # put this at the top of the file
+PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -31,7 +29,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'Africa/Accra'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -87,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'ov_v5q^32hq(6=h8131bt3u8nd$#+#y4#77ek28o!lh%fd@qog'
+SECRET_KEY = 'hoc0ec(p&o!@&deq$r&ql3l))2!02whk88*h&8nk8*!q&4lnk='
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -107,8 +105,12 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'trade.urls'
 
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_ROOT, 'templates')
+	os.path.join(PROJECT_ROOT, 'templates')
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
 )
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -116,6 +118,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'trade.tradeapp',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
