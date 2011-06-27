@@ -10,7 +10,7 @@ class Advert(models.Model):
 	created=models.DateTimeField(auto_now_add=True)
 	updated=models.DateTimeField(auto_now=True)
 	def __unicode__(self):
-	    return self.Item+ " , $ "+str(self.price)+" ," +str(self.updated)
+	    return self.Item+ " , $"+str(self.price)+" ," +str(self.updated)
 
 class Request(models.Model):
 	product=models.CharField(max_length=100)
