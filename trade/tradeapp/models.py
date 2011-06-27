@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib import admin
 
 class Advert(models.Model):
-	prodName=models.CharField(max_length=100)
+	Item=models.CharField(max_length=100)
 	name=models.CharField(max_length=60)
 	price=models.FloatField()
 	phone=models.CharField(max_length=100)
@@ -22,15 +22,15 @@ class Request(models.Model):
 	    return self.product+" , "+str(self.Updated)
 
 class AdvertAdmin(admin.ModelAdmin):
-       list_display=('prodName','name','price','phone','email','created')
+       list_display=('Item','name','price','phone','email','created')
        list_filter=('prodName','created','name')
-       search_fields=('name','prodName')
-       ordering=('prodName','created')
+       search_fields=('name','Item')
+       ordering=('Item','created')
 
 class RequestAdmin(admin.ModelAdmin):
       list_display=('product','created','phone','email')
       ordering=('product','-created')
 
-admin.site.register(Advert)
-admin.site.register(Request)
+admin.site.register(Advert,AdvertAdmin)
+admin.site.register(Request,RequestAdmin)
 
