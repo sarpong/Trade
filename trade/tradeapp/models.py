@@ -27,7 +27,7 @@ class AdvertAdmin(admin.ModelAdmin):
        search_fields=('name','prodName')
        ordering=('prodName','created')
 
-class RequestAdmin(admin.modelAdmin):
+class RequestAdmin(admin.ModelAdmin):
       list_display=('product','created','phone','email')
       ordering=('product','-created')
 
