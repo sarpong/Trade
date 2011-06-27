@@ -13,13 +13,13 @@ class Advert(models.Model):
 	    return self.Item+ " , $"+str(self.price)+" ," +str(self.updated)
 
 class Request(models.Model):
-	product=models.CharField(max_length=100)
+	Item=models.CharField(max_length=100)
 	created=models.DateTimeField(auto_now_add=True)
 	updated=models.DateTimeField(auto_now=True)
 	phone=models.CharField(max_length=100)
 	email=models.EmailField()
 	def __unicode__(self):
-	    return self.product+" , "+str(self.updated)
+	    return self.Item+" , "+str(self.updated)
 
 class AdvertAdmin(admin.ModelAdmin):
        list_display=('Item','name','price','phone','email','created')
@@ -28,8 +28,8 @@ class AdvertAdmin(admin.ModelAdmin):
        ordering=('Item','created')
 
 class RequestAdmin(admin.ModelAdmin):
-      list_display=('product','created','phone','email')
-      ordering=('product','-created')
+      list_display=('Item','created','phone','email')
+      ordering=('Item','-created')
 
 admin.site.register(Advert,AdvertAdmin)
 admin.site.register(Request,RequestAdmin)
